@@ -10,18 +10,18 @@
  *
  * @link              http://example.com
  * @since             1.0.0
- * @package           Facebook URL Stats
+ * @package           FB-URL-Stats
  *
  * @wordpress-plugin
- * Plugin Name:       Facebook URL Stats
- * Plugin URI:        https://github.com/SKempin/Plugin_Name
+ * Plugin Name:       URL Stats from Facebook
+ * Plugin URI:        https://github.com/SKempin/FB-URL-Stats
  * Description:       Easily embed the Facebook like, share and comment counts of any URL, using Wordpress shortcodes.
  * Version:           1.0.0
  * Author:            Stephen Kempin
  * Author URI:        http://www.stephenkempin.co.uk/
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
- * Text Domain:       facebook-URL-stats
+ * Text Domain:       fb-URL-stats
  * Domain Path:       /languages
  */
 
@@ -121,7 +121,7 @@ function fus_likes() {
 	$counts_array = dataCheck($shortcode_pageURL);
 	echo '<span class="fb-likes">'.$counts_array[0][1].'</span>';
 }
-add_shortcode('likes', 'fus_likes');
+add_shortcode('likes', 'likes');
 
 
 // shares shortcode 
@@ -130,7 +130,7 @@ function fus_shares() {
 	$counts_array = dataCheck($shortcode_pageURL);
 	echo '<span class="fb-shares">'.$counts_array[1][1].'</span>';	
 }
-add_shortcode('shares', 'fus_shares');
+add_shortcode('shares', 'shares');
 
 
 // comments shortcode
@@ -139,4 +139,4 @@ function fus_comments() {
 	$counts_array = dataCheck($shortcode_pageURL);
 	echo '<span class="fb-comments">'.$counts_array[2][1].'</span>';
 }
-add_shortcode('comments', 'fus_comments');
+add_shortcode('comments', 'comments');

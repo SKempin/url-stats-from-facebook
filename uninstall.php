@@ -22,7 +22,7 @@
  * @link       http://example.com
  * @since      1.0.0
  *
- * @package    Facebook-Page-Stats
+ * @package    URL Stats from Facebook
  */
 
 // If uninstall not called from WordPress, then exit.

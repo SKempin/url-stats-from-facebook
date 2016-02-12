@@ -1,4 +1,4 @@
-=== Plugin Name ===
+=== URL Stats from Facebook ===
 Contributors: skempin
 Tags: facebook, embed, posts, pages, social media
 Requires at least: 3.0.1

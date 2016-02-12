@@ -6,8 +6,8 @@
  * @link       http://example.com
  * @since      1.0.0
  *
- * @package    Facebook-URL-Stats
- * @subpackage Facebook-URL-Stats/public
+ * @package    FB-URL-Stats
+ * @subpackage FB-URL-Stats/public
  */
 
 class Plugin_Name_Public {
