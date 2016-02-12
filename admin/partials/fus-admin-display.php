@@ -21,13 +21,13 @@ function fus_display_settings() {
 
     $html = '</pre>
 		<div class="wrap"><form action="options.php" method="post" name="options">
-		<h1>Facebook Page Stats</h1>
+		<h1>URL Stats from Facebook</h1>
 		' . wp_nonce_field('update-options') . '
 		<table class="form-table" width="100%" cellpadding="10">
 		<tbody>
 		<tr>
 		<td scope="row" align="left">
-		 <h2><label class="label">Page URL:</label></h2>
+		 <h2><label class="label">URL:</label></h2>
 		<input type="text" name="fus_page_url" value="' . $page_url . '" /></td>
 		</tr>
 		
@@ -39,7 +39,7 @@ function fus_display_settings() {
 		
 		 <input type="submit" name="Submit" value="Update" /></form></div>
 		 <hr>
-		 <h2>Page Stats:</h2>
+		 <h2>URL Stats:</h2>
 		 	<div class="stats-box">
 			<p><strong>Like Count:</strong> '.$page_stats[0][1].'</p>
 			<p><strong>Share Count:</strong> '.$page_stats[1][1].'</p>
