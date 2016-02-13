@@ -10,7 +10,7 @@
  * @subpackage FB-URL-Stats/admin
  */
 
-class Plugin_Name_Admin {
+class fus_Admin {
 
 	/**
 	 * The ID of this plugin.

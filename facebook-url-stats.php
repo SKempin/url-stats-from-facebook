@@ -66,13 +66,13 @@ require plugin_dir_path( __FILE__ ) . 'includes/fus.php';
  *
  * @since    1.0.0
  */
-function run_Plugin_Name() {
+function run_fus() {
 
-	$plugin = new Plugin_Name();
+	$plugin = new fus();
 	$plugin->run();
 
 }
-run_Plugin_Name();
+run_fus();
 
 
 
@@ -86,7 +86,7 @@ add_action('admin_menu', 'fus_settings');
 
 
 // Query for page statistics
-function dataCheck($url) {
+function fus_dataCheck($url) {
 
     // get JSON file 
     $fql_string = file_get_contents("https://graph.facebook.com/fql?q=SELECT%20url,%20normalized_url,%20share_count,%20like_count,%20comment_count,%20total_count,%20commentsbox_count,%20comments_fbid,%20click_count%20FROM%20link_stat%20WHERE%20url=%22{$url}%22");
@@ -118,25 +118,25 @@ $shortcode_pageURL = $page;
 // likes shortcode 
 function fus_likes() {
 	global $shortcode_pageURL;
-	$counts_array = dataCheck($shortcode_pageURL);
+	$counts_array = fus_dataCheck($shortcode_pageURL);
 	echo '<span class="fb-likes">'.$counts_array[0][1].'</span>';
 }
-add_shortcode('likes', 'likes');
+add_shortcode('likes', 'fus_likes');
 
 
 // shares shortcode 
 function fus_shares() {
 	global $shortcode_pageURL;
-	$counts_array = dataCheck($shortcode_pageURL);
+	$counts_array = fus_dataCheck($shortcode_pageURL);
 	echo '<span class="fb-shares">'.$counts_array[1][1].'</span>';	
 }
-add_shortcode('shares', 'shares');
+add_shortcode('shares', 'fus_shares');
 
 
 // comments shortcode
 function fus_comments() {
 	global $shortcode_pageURL;
-	$counts_array = dataCheck($shortcode_pageURL);
+	$counts_array = fus_dataCheck($shortcode_pageURL);
 	echo '<span class="fb-comments">'.$counts_array[2][1].'</span>';
 }
-add_shortcode('comments', 'comments');
+add_shortcode('comments', 'fus_comments');

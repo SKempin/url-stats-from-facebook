@@ -10,7 +10,7 @@
  * @subpackage FB-URL-Stats/public
  */
 
-class Plugin_Name_Public {
+class fus_Public {
 
 	/**
 	 * The ID of this plugin.

@@ -13,7 +13,7 @@
  * @subpackage FB-URL-Stats/includes
  */
 
-class Plugin_Name_i18n {
+class fus_i18n {
 
 
 	/**

@@ -17,7 +17,7 @@
 function fus_display_settings() {
 
     $page_url = (get_option('fus_page_url') != '') ? get_option('fus_page_url') : 'www.domain.co.uk';
-    $page_stats = dataCheck($page_url);
+    $page_stats = fus_dataCheck($page_url);
 
     $html = '</pre>
 		<div class="wrap"><form action="options.php" method="post" name="options">
