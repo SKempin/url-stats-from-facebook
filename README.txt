@@ -15,17 +15,17 @@ This plugin uses Facebook Query Language (FQL) on the FB API to query the number
 
 == Installation ==
 
-1. Upload `Plugin_Name` to the `/wp-content/plugins/` directory
+1. Upload `url-stats-from-facebook` to the `/wp-content/plugins/` directory
 1. Activate the plugin through the 'Plugins' menu in WordPress
 1. Set the URL of the page you want to query the number of Facebook likes, shares and comments count for
-1. Place `<?php do_action('fps_likes()'); ?>` in your templates
-1. Use the shortcodes ['fps_likes'], ['fps_shares'] and ['fps_comments'] in your pages or posts
+1. Place `<?php do_action('fus_likes()'); ?>` in your templates
+1. Use the shortcodes ['fus_likes'], ['fus_shares'] and ['fus_comments'] in your pages or posts
 
 == Frequently Asked Questions ==
 
 = How do I use the plugin? =
 
-Use the shortcodes ['fps_likes'], ['fps_shares'] and ['fps_comments'] in your pages or posts to output the relevant statistics for the URL set in the admin area.
+Use the shortcodes ['fus_likes'], ['fus_shares'] and ['fus_comments'] in your pages or posts to output the relevant statistics for the URL set in the admin area.
 
 == Screenshots ==
 
