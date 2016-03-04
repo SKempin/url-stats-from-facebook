@@ -14,7 +14,7 @@
  *
  * @wordpress-plugin
  * Plugin Name:       URL Stats from Facebook
- * Plugin URI:        https://github.com/SKempin/URL-Stats-Facebook
+ * Plugin URI:        https://wordpress.org/plugins/url-stats-from-facebook/
  * Description:       Easily embed the Facebook like, share and comment counts of any URL via Wordpress shortcodes.
  * Version:           1.0.1
  * Author:            Stephen Kempin
