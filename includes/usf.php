@@ -184,7 +184,7 @@ class usf {
 	 * The name of the plugin used to uniquely identify it within the context of
 	 * WordPress and to define internationalization functionality.
 	 *
-	 * @since     1.0.0
+	 * 
 	 * @return    string    The name of the plugin.
 	 */
 	public function get_Plugin_Name() {
@@ -194,7 +194,7 @@ class usf {
 	/**
 	 * The reference to the class that orchestrates the hooks with the plugin.
 	 *
-	 * @since     1.0.0
+	 * 
 	 * @return    Plugin_Name_Loader    Orchestrates the hooks of the plugin.
 	 */
 	public function get_loader() {
@@ -204,7 +204,7 @@ class usf {
 	/**
 	 * Retrieve the version number of the plugin.
 	 *
-	 * @since     1.0.0
+	 * 
 	 * @return    string    The version number of the plugin.
 	 */
 	public function get_version() {
