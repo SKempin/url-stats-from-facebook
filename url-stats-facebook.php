@@ -9,13 +9,13 @@
  * that starts the plugin.
  *
  * @link              https://wordpress.org/plugins/url-stats-from-facebook/
- * @since             1.0.0
+ * @since             1.0.1
  * @package           URL-Stats-Facebook
  *
  * @wordpress-plugin
  * Plugin Name:       URL Stats from Facebook
  * Plugin URI:        https://github.com/SKempin/URL-Stats-Facebook
- * Description:       Easily embed the Facebook like, share and comment counts of any URL, using Wordpress shortcodes.
+ * Description:       Easily embed the Facebook like, share and comment counts of any URL via Wordpress shortcodes.
  * Version:           1.0.1
  * Author:            Stephen Kempin
  * Author URI:        http://www.stephenkempin.co.uk/
@@ -64,7 +64,7 @@ require plugin_dir_path( __FILE__ ) . 'includes/usf.php';
  * then kicking off the plugin from this point in the file does
  * not affect the page life cycle.
  *
- * 
+ * @since    1.0.0
  */
 function run_usf() {
 

@@ -17,15 +17,15 @@ URL Stats from Facebook uses the Facebook Graph API to query the stats for any U
 
 1. Upload `url-stats-from-facebook` to the `/wp-content/plugins/` directory
 1. Activate the plugin through the 'Plugins' menu in WordPress
-1. Set the URL of the page you want to query the number of Facebook likes, shares and comments count for
-1. Place `<?php do_action('usf_likes()'); ?>` in your templates
+1. Go to 'URL Stats FB' and set the URL of the page you want to query the number of Facebook likes, shares and comments count for
+1. Place `<?php do_action('usf_likes()'); ?>`, `<?php do_action('usf_shares()'); ?>` or `<?php do_action('usf_comments()'); ?>` in your templates
 1. Use the shortcodes ['usf_likes'], ['usf_shares'] and ['usf_comments'] in your pages or posts
 
 == Frequently Asked Questions ==
 
 = How do I use the plugin? =
 
-Use the shortcodes ['usf_likes'], ['usf_shares'] and ['usf_comments'] in your pages or posts to output the relevant statistics for the URL set in the admin area.
+Use the shortcodes ['usf_likes'], ['usf_shares'] and ['usf_comments'] in your pages or posts to output the relevant statistics for the URL set under the 'URL Stats FB' settings.
 
 == Screenshots ==
 
