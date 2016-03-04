@@ -16,7 +16,7 @@
  * Plugin Name:       URL Stats from Facebook
  * Plugin URI:        https://github.com/SKempin/URL-Stats-Facebook
  * Description:       Easily embed the Facebook like, share and comment counts of any URL, using Wordpress shortcodes.
- * Version:           1.0.0
+ * Version:           1.0.1
  * Author:            Stephen Kempin
  * Author URI:        http://www.stephenkempin.co.uk/
  * License:           GPL-2.0+
@@ -79,7 +79,7 @@ run_usf();
 // Add plugin options page
 include_once plugin_dir_path( __FILE__ ) . 'admin/partials/usf-admin-display.php';
 function usf_settings() {
-    add_menu_page('FB URL Stats', 'FB URL Stats', 'administrator', 'usf_settings', 'usf_display_settings',  'dashicons-facebook');
+    add_menu_page('URL Stats FB', 'URL Stats FB', 'administrator', 'usf_settings', 'usf_display_settings',  'dashicons-facebook');
 }
 add_action('admin_menu', 'usf_settings');
 

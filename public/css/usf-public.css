@@ -4,7 +4,7 @@
  */
  
  /* Default Syles */
- .fb-likes, .fb-shares, .fb-comments {
+ .usf-likes, .usf-shares, .usf-comments {
      display:block;
      font-weight:bold;
      font-size:14px;
