@@ -6,11 +6,11 @@
  * A class definition that includes attributes and functions used across both the
  * public-facing side of the site and the admin area.
  *
- * @link       http://example.com
- * @since      1.0.0
+ * @link       https://wordpress.org/plugins/url-stats-from-facebook/
+ * @since      1.0.1
  *
- * @package    FB-URL-Stats
- * @subpackage FB-URL-Stats/includes
+ * @package    URL-Stats-Facebook
+ * @subpackage URL-Stats-Facebook/includes
  */
 
 /**
@@ -22,8 +22,8 @@
  * Also maintains the unique identifier of this plugin as well as the current
  * version of the plugin.
  *
- * @since      1.0.0
- * @package    Facebook-Page-Stats
+ * @since      1.0.1
+ * @package    URL-Stats-Facebook
  * @subpackage Facebook-Page-Stats/includes
  */
 class usf {
@@ -32,7 +32,7 @@ class usf {
 	 * The loader that's responsible for maintaining and registering all hooks that power
 	 * the plugin.
 	 *
-	 * @since    1.0.0
+	 * 
 	 * @access   protected
 	 * @var      Plugin_Name_Loader    $loader    Maintains and registers all hooks for the plugin.
 	 */
@@ -41,7 +41,7 @@ class usf {
 	/**
 	 * The unique identifier of this plugin.
 	 *
-	 * @since    1.0.0
+	 * 
 	 * @access   protected
 	 * @var      string    $Plugin_Name    The string used to uniquely identify this plugin.
 	 */
@@ -50,7 +50,7 @@ class usf {
 	/**
 	 * The current version of the plugin.
 	 *
-	 * @since    1.0.0
+	 * 
 	 * @access   protected
 	 * @var      string    $version    The current version of the plugin.
 	 */
@@ -63,12 +63,12 @@ class usf {
 	 * Load the dependencies, define the locale, and set the hooks for the admin area and
 	 * the public-facing side of the site.
 	 *
-	 * @since    1.0.0
+	 * 
 	 */
 	public function __construct() {
 
-		$this->Plugin_Name = 'Facebook-Page-Stats';
-		$this->version = '1.0.0';
+		$this->Plugin_Name = 'URL-Stats-Facebook';
+		$this->version = '1.0.1';
 
 		$this->load_dependencies();
 		$this->set_locale();
@@ -90,7 +90,7 @@ class usf {
 	 * Create an instance of the loader which will be used to register the hooks
 	 * with WordPress.
 	 *
-	 * @since    1.0.0
+	 * 
 	 * @access   private
 	 */
 	private function load_dependencies() {
@@ -128,7 +128,7 @@ class usf {
 	 * Uses the Plugin_Name_i18n class in order to set the domain and to register the hook
 	 * with WordPress.
 	 *
-	 * @since    1.0.0
+	 * 
 	 * @access   private
 	 */
 	private function set_locale() {
@@ -143,7 +143,7 @@ class usf {
 	 * Register all of the hooks related to the admin area functionality
 	 * of the plugin.
 	 *
-	 * @since    1.0.0
+	 * 
 	 * @access   private
 	 */
 	private function define_admin_hooks() {
@@ -159,7 +159,7 @@ class usf {
 	 * Register all of the hooks related to the public-facing functionality
 	 * of the plugin.
 	 *
-	 * @since    1.0.0
+	 * 
 	 * @access   private
 	 */
 	private function define_public_hooks() {
@@ -174,7 +174,7 @@ class usf {
 	/**
 	 * Run the loader to execute all of the hooks with WordPress.
 	 *
-	 * @since    1.0.0
+	 * 
 	 */
 	public function run() {
 		$this->loader->run();

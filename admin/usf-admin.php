@@ -3,11 +3,11 @@
 /**
  * The admin-specific functionality of the plugin.
  *
- * @link       http://example.com
- * @since      1.0.0
+ * @link       https://wordpress.org/plugins/url-stats-from-facebook/
+ * @since      1.0.1
  *
- * @package    FB-URL-Stats
- * @subpackage FB-URL-Stats/admin
+ * @package    URL-Stats-Facebook
+ * @subpackage URL-Stats-Facebook/admin
  */
 
 class usf_Admin {
@@ -15,7 +15,7 @@ class usf_Admin {
 	/**
 	 * The ID of this plugin.
 	 *
-	 * @since    1.0.0
+	 * 
 	 * @access   private
 	 * @var      string    $Plugin_Name    The ID of this plugin.
 	 */
@@ -24,7 +24,7 @@ class usf_Admin {
 	/**
 	 * The version of this plugin.
 	 *
-	 * @since    1.0.0
+	 * 
 	 * @access   private
 	 * @var      string    $version    The current version of this plugin.
 	 */
@@ -33,7 +33,7 @@ class usf_Admin {
 	/**
 	 * Initialize the class and set its properties.
 	 *
-	 * @since    1.0.0
+	 * 
 	 * @param      string    $Plugin_Name       The name of this plugin.
 	 * @param      string    $version    The version of this plugin.
 	 */
@@ -51,7 +51,7 @@ class usf_Admin {
 	/**
 	 * Register the stylesheets for the admin area.
 	 *
-	 * @since    1.0.0
+	 * 
 	 */
 	public function enqueue_styles() {
 
@@ -74,7 +74,7 @@ class usf_Admin {
 	/**
 	 * Register the JavaScript for the admin area.
 	 *
-	 * @since    1.0.0
+	 * 
 	 */
 	// public function enqueue_scripts() {
 

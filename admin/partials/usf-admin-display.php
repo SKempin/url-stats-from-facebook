@@ -5,11 +5,11 @@
  *
  * This file is used to markup the admin-facing aspects of the plugin.
  *
- * @link       http://example.com
- * @since      1.0.0
+ * @link       https://wordpress.org/plugins/url-stats-from-facebook/
+ * @since      1.0.1
  *
- * @package    FB-URL-Stats
- * @subpackage FB-URL-Stats/admin/partials
+ * @package    URL-Stats-Facebook
+ * @subpackage URL-Stats-Facebook/admin/partials
  */
 
 

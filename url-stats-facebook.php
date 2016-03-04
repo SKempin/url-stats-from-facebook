@@ -8,7 +8,7 @@
  * registers the activation and deactivation functions, and defines a function
  * that starts the plugin.
  *
- * @link              http://example.com
+ * @link              https://wordpress.org/plugins/url-stats-from-facebook/
  * @since             1.0.0
  * @package           URL-Stats-Facebook
  *
@@ -64,7 +64,7 @@ require plugin_dir_path( __FILE__ ) . 'includes/usf.php';
  * then kicking off the plugin from this point in the file does
  * not affect the page life cycle.
  *
- * @since    1.0.0
+ * 
  */
 function run_usf() {
 

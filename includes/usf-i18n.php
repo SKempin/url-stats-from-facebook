@@ -6,11 +6,11 @@
  * Loads and defines the internationalization files for this plugin
  * so that it is ready for translation.
  *
- * @link       http://example.com
- * @since      1.0.0
+ * @link       https://wordpress.org/plugins/url-stats-from-facebook/
+ * @since      1.0.1
  *
- * @package    FB-URL-Stats
- * @subpackage FB-URL-Stats/includes
+ * @package    URL-Stats-Facebook
+ * @subpackage URL-Stats-Facebook/includes
  */
 
 class usf_i18n {
@@ -19,7 +19,7 @@ class usf_i18n {
 	/**
 	 * Load the plugin text domain for translation.
 	 *
-	 * @since    1.0.0
+	 * 
 	 */
 	public function load_plugin_textdomain() {
 

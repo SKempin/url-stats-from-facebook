@@ -3,11 +3,11 @@
 /**
  * The public-facing functionality of the plugin.
  *
- * @link       http://example.com
- * @since      1.0.0
+ * @link       https://wordpress.org/plugins/url-stats-from-facebook/
+ * @since      1.0.1
  *
- * @package    FB-URL-Stats
- * @subpackage FB-URL-Stats/public
+ * @package    URL-Stats-Facebook
+ * @subpackage URL-Stats-Facebook/public
  */
 
 class usf_Public {
@@ -15,7 +15,7 @@ class usf_Public {
 	/**
 	 * The ID of this plugin.
 	 *
-	 * @since    1.0.0
+	 * 
 	 * @access   private
 	 * @var      string    $Plugin_Name    The ID of this plugin.
 	 */
@@ -24,7 +24,7 @@ class usf_Public {
 	/**
 	 * The version of this plugin.
 	 *
-	 * @since    1.0.0
+	 * 
 	 * @access   private
 	 * @var      string    $version    The current version of this plugin.
 	 */
@@ -33,7 +33,7 @@ class usf_Public {
 	/**
 	 * Initialize the class and set its properties.
 	 *
-	 * @since    1.0.0
+	 * 
 	 * @param      string    $Plugin_Name       The name of the plugin.
 	 * @param      string    $version    The version of this plugin.
 	 */
@@ -47,7 +47,7 @@ class usf_Public {
 	/**
 	 * Register the stylesheets for the public-facing side of the site.
 	 *
-	 * @since    1.0.0
+	 * 
 	 */
 	public function enqueue_styles() {
 
@@ -70,7 +70,7 @@ class usf_Public {
 	/**
 	 * Register the JavaScript for the public-facing side of the site.
 	 *
-	 * @since    1.0.0
+	 * 
 	 */
 	// public function enqueue_scripts() {
 
