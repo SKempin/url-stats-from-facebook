@@ -7,11 +7,11 @@ Stable tag: 4.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Easily embed the Facebook like, share and comment counts of any URL, using Wordpress shortcodes.
+Quickly and easily get and embed the number of likes, shares and comments that any URL has had on Facebook. 
 
 == Description ==
 
-This plugin uses Facebook Query Language (FQL) on the FB API to query the number of likes, shares and comments any URL has had on Facebook.
+URL Stats from Facebook uses the Facebook Graph API to query the stats for any URL (including facebook pages).
 
 == Installation ==
 
