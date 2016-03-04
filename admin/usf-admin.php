@@ -10,7 +10,7 @@
  * @subpackage FB-URL-Stats/admin
  */
 
-class fus_Admin {
+class usf_Admin {
 
 	/**
 	 * The ID of this plugin.
@@ -67,7 +67,7 @@ class fus_Admin {
 		 * class.
 		 */
 
-		wp_enqueue_style( $this->Plugin_Name, plugin_dir_url( __FILE__ ) . 'css/fus-admin.css', array(), $this->version, 'all' );
+		wp_enqueue_style( $this->Plugin_Name, plugin_dir_url( __FILE__ ) . 'css/usf-admin.css', array(), $this->version, 'all' );
 
 	}
 

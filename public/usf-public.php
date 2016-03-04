@@ -10,7 +10,7 @@
  * @subpackage FB-URL-Stats/public
  */
 
-class fus_Public {
+class usf_Public {
 
 	/**
 	 * The ID of this plugin.
@@ -63,7 +63,7 @@ class fus_Public {
 		 * class.
 		 */
 
-		wp_enqueue_style( $this->Plugin_Name, plugin_dir_url( __FILE__ ) . 'css/fus-public.css', array(), $this->version, 'all' );
+		wp_enqueue_style( $this->Plugin_Name, plugin_dir_url( __FILE__ ) . 'css/usf-public.css', array(), $this->version, 'all' );
 
 	}
 

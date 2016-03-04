@@ -13,7 +13,7 @@
  * @subpackage FB-URL-Stats/includes
  */
 
-class fus_i18n {
+class usf_i18n {
 
 
 	/**

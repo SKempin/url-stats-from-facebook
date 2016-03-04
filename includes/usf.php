@@ -26,7 +26,7 @@
  * @package    Facebook-Page-Stats
  * @subpackage Facebook-Page-Stats/includes
  */
-class fus {
+class usf {
 
 	/**
 	 * The loader that's responsible for maintaining and registering all hooks that power
@@ -99,26 +99,26 @@ class fus {
 		 * The class responsible for orchestrating the actions and filters of the
 		 * core plugin.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/fus-loader.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/usf-loader.php';
 
 		/**
 		 * The class responsible for defining internationalization functionality
 		 * of the plugin.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/fus-i18n.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/usf-i18n.php';
 
 		/**
 		 * The class responsible for defining all actions that occur in the admin area.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/fus-admin.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/usf-admin.php';
 
 		/**
 		 * The class responsible for defining all actions that occur in the public-facing
 		 * side of the site.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/fus-public.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/usf-public.php';
 
-		$this->loader = new fus_Loader();
+		$this->loader = new usf_Loader();
 
 	}
 
@@ -133,7 +133,7 @@ class fus {
 	 */
 	private function set_locale() {
 
-		$plugin_i18n = new fus_i18n();
+		$plugin_i18n = new usf_i18n();
 
 		$this->loader->add_action( 'plugins_loaded', $plugin_i18n, 'load_plugin_textdomain' );
 
@@ -148,7 +148,7 @@ class fus {
 	 */
 	private function define_admin_hooks() {
 
-		$plugin_admin = new fus_Admin( $this->get_Plugin_Name(), $this->get_version() );
+		$plugin_admin = new usf_Admin( $this->get_Plugin_Name(), $this->get_version() );
 
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
 		//$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
@@ -164,7 +164,7 @@ class fus {
 	 */
 	private function define_public_hooks() {
 
-		$plugin_public = new fus_Public( $this->get_Plugin_Name(), $this->get_version() );
+		$plugin_public = new usf_Public( $this->get_Plugin_Name(), $this->get_version() );
 
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
 		//$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
