@@ -8,20 +8,20 @@
  * registers the activation and deactivation functions, and defines a function
  * that starts the plugin.
  *
- * @link              http://example.com
- * @since             1.0.0
- * @package           FB-URL-Stats
+ * @link              https://wordpress.org/plugins/url-stats-from-facebook/
+ * @since             1.0.1
+ * @package           URL-Stats-Facebook
  *
  * @wordpress-plugin
  * Plugin Name:       URL Stats from Facebook
- * Plugin URI:        https://github.com/SKempin/FB-URL-Stats
- * Description:       Easily embed the Facebook like, share and comment counts of any URL, using Wordpress shortcodes.
- * Version:           1.0.0
+ * Plugin URI:        https://github.com/SKempin/URL-Stats-Facebook
+ * Description:       Easily embed the Facebook like, share and comment counts of any URL via Wordpress shortcodes.
+ * Version:           1.0.1
  * Author:            Stephen Kempin
  * Author URI:        http://www.stephenkempin.co.uk/
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
- * Text Domain:       fb-URL-stats
+ * Text Domain:       URL-Stats-Facebook
  * Domain Path:       /languages
  */
 
@@ -55,7 +55,7 @@ if ( ! defined( 'WPINC' ) ) {
  * The core plugin class that is used to define internationalization,
  * admin-specific hooks, and public-facing site hooks.
  */
-require plugin_dir_path( __FILE__ ) . 'includes/fus.php';
+require plugin_dir_path( __FILE__ ) . 'includes/usf.php';
 
 /**
  * Begins execution of the plugin.
@@ -66,27 +66,27 @@ require plugin_dir_path( __FILE__ ) . 'includes/fus.php';
  *
  * @since    1.0.0
  */
-function run_fus() {
+function run_usf() {
 
-	$plugin = new fus();
+	$plugin = new usf();
 	$plugin->run();
 
 }
-run_fus();
+run_usf();
 
 
 
 // Add plugin options page
-include_once plugin_dir_path( __FILE__ ) . 'admin/partials/fus-admin-display.php';
-function fus_settings() {
-    add_menu_page('FB URL Stats', 'FB URL Stats', 'administrator', 'fus_settings', 'fus_display_settings',  'dashicons-facebook');
+include_once plugin_dir_path( __FILE__ ) . 'admin/partials/usf-admin-display.php';
+function usf_settings() {
+    add_menu_page('URL Stats FB', 'URL Stats FB', 'administrator', 'usf_settings', 'usf_display_settings',  'dashicons-facebook');
 }
-add_action('admin_menu', 'fus_settings');
+add_action('admin_menu', 'usf_settings');
 
 
 
 // Query for page statistics
-function fus_dataCheck($url) {
+function usf_dataCheck($url) {
 
     // get JSON file 
     $fql_string = file_get_contents("https://graph.facebook.com/fql?q=SELECT%20url,%20normalized_url,%20share_count,%20like_count,%20comment_count,%20total_count,%20commentsbox_count,%20comments_fbid,%20click_count%20FROM%20link_stat%20WHERE%20url=%22{$url}%22");
@@ -110,33 +110,33 @@ function fus_dataCheck($url) {
 
 
 // Get URL option from admin
-$page = get_option('fus_page_url');
+$page = get_option('usf_page_url');
 
 
 // Generate Shortcodes
 $shortcode_pageURL = $page;
 // likes shortcode 
-function fus_likes() {
+function usf_likes() {
 	global $shortcode_pageURL;
-	$counts_array = fus_dataCheck($shortcode_pageURL);
-	echo '<span class="fb-likes">'.$counts_array[0][1].'</span>';
+	$counts_array = usf_dataCheck($shortcode_pageURL);
+	echo '<span class="usf-likes">'.$counts_array[0][1].'</span>';
 }
-add_shortcode('likes', 'fus_likes');
+add_shortcode('usf_likes', 'usf_likes');
 
 
 // shares shortcode 
-function fus_shares() {
+function usf_shares() {
 	global $shortcode_pageURL;
-	$counts_array = fus_dataCheck($shortcode_pageURL);
-	echo '<span class="fb-shares">'.$counts_array[1][1].'</span>';	
+	$counts_array = usf_dataCheck($shortcode_pageURL);
+	echo '<span class="usf-shares">'.$counts_array[1][1].'</span>';	
 }
-add_shortcode('shares', 'fus_shares');
+add_shortcode('usf_shares', 'usf_shares');
 
 
 // comments shortcode
-function fus_comments() {
+function usf_comments() {
 	global $shortcode_pageURL;
-	$counts_array = fus_dataCheck($shortcode_pageURL);
-	echo '<span class="fb-comments">'.$counts_array[2][1].'</span>';
+	$counts_array = usf_dataCheck($shortcode_pageURL);
+	echo '<span class="usf-comments">'.$counts_array[2][1].'</span>';
 }
-add_shortcode('comments', 'fus_comments');
+add_shortcode('usf_comments', 'usf_comments');

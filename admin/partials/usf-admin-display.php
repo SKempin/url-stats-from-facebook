@@ -5,19 +5,19 @@
  *
  * This file is used to markup the admin-facing aspects of the plugin.
  *
- * @link       http://example.com
- * @since      1.0.0
+ * @link       https://wordpress.org/plugins/url-stats-from-facebook/
+ * @since      1.0.1
  *
- * @package    FB-URL-Stats
- * @subpackage FB-URL-Stats/admin/partials
+ * @package    URL-Stats-Facebook
+ * @subpackage URL-Stats-Facebook/admin/partials
  */
 
 
 // Admin options page
-function fus_display_settings() {
+function usf_display_settings() {
 
-    $page_url = (get_option('fus_page_url') != '') ? get_option('fus_page_url') : 'www.domain.co.uk';
-    $page_stats = fus_dataCheck($page_url);
+    $page_url = (get_option('usf_page_url') != '') ? get_option('usf_page_url') : 'www.domain.co.uk';
+    $page_stats = usf_dataCheck($page_url);
 
     $html = '</pre>
 		<div class="wrap"><form action="options.php" method="post" name="options">
@@ -28,14 +28,14 @@ function fus_display_settings() {
 		<tr>
 		<td scope="row" align="left">
 		 <h2><label class="label">URL:</label></h2>
-		<input type="text" name="fus_page_url" value="' . $page_url . '" /></td>
+		<input type="text" name="usf_page_url" value="' . $page_url . '" /></td>
 		</tr>
 		
 		</tbody>
 		</table>
 		 <input type="hidden" name="action" value="update" />
 		
-		 <input type="hidden" name="page_options" value="fus_page_url" />
+		 <input type="hidden" name="page_options" value="usf_page_url" />
 		
 		 <input type="submit" name="Submit" value="Update" /></form></div>
 		 <hr>

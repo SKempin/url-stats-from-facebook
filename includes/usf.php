@@ -6,11 +6,11 @@
  * A class definition that includes attributes and functions used across both the
  * public-facing side of the site and the admin area.
  *
- * @link       http://example.com
- * @since      1.0.0
+ * @link       https://wordpress.org/plugins/url-stats-from-facebook/
+ * @since      1.0.1
  *
- * @package    FB-URL-Stats
- * @subpackage FB-URL-Stats/includes
+ * @package    URL-Stats-Facebook
+ * @subpackage URL-Stats-Facebook/includes
  */
 
 /**
@@ -22,17 +22,17 @@
  * Also maintains the unique identifier of this plugin as well as the current
  * version of the plugin.
  *
- * @since      1.0.0
- * @package    Facebook-Page-Stats
+ * @since      1.0.1
+ * @package    URL-Stats-Facebook
  * @subpackage Facebook-Page-Stats/includes
  */
-class fus {
+class usf {
 
 	/**
 	 * The loader that's responsible for maintaining and registering all hooks that power
 	 * the plugin.
 	 *
-	 * @since    1.0.0
+	 * 
 	 * @access   protected
 	 * @var      Plugin_Name_Loader    $loader    Maintains and registers all hooks for the plugin.
 	 */
@@ -41,7 +41,7 @@ class fus {
 	/**
 	 * The unique identifier of this plugin.
 	 *
-	 * @since    1.0.0
+	 * 
 	 * @access   protected
 	 * @var      string    $Plugin_Name    The string used to uniquely identify this plugin.
 	 */
@@ -50,7 +50,7 @@ class fus {
 	/**
 	 * The current version of the plugin.
 	 *
-	 * @since    1.0.0
+	 * 
 	 * @access   protected
 	 * @var      string    $version    The current version of the plugin.
 	 */
@@ -63,12 +63,12 @@ class fus {
 	 * Load the dependencies, define the locale, and set the hooks for the admin area and
 	 * the public-facing side of the site.
 	 *
-	 * @since    1.0.0
+	 * 
 	 */
 	public function __construct() {
 
-		$this->Plugin_Name = 'Facebook-Page-Stats';
-		$this->version = '1.0.0';
+		$this->Plugin_Name = 'URL-Stats-Facebook';
+		$this->version = '1.0.1';
 
 		$this->load_dependencies();
 		$this->set_locale();
@@ -90,7 +90,7 @@ class fus {
 	 * Create an instance of the loader which will be used to register the hooks
 	 * with WordPress.
 	 *
-	 * @since    1.0.0
+	 * 
 	 * @access   private
 	 */
 	private function load_dependencies() {
@@ -99,26 +99,26 @@ class fus {
 		 * The class responsible for orchestrating the actions and filters of the
 		 * core plugin.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/fus-loader.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/usf-loader.php';
 
 		/**
 		 * The class responsible for defining internationalization functionality
 		 * of the plugin.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/fus-i18n.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/usf-i18n.php';
 
 		/**
 		 * The class responsible for defining all actions that occur in the admin area.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/fus-admin.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/usf-admin.php';
 
 		/**
 		 * The class responsible for defining all actions that occur in the public-facing
 		 * side of the site.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/fus-public.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/usf-public.php';
 
-		$this->loader = new fus_Loader();
+		$this->loader = new usf_Loader();
 
 	}
 
@@ -128,12 +128,12 @@ class fus {
 	 * Uses the Plugin_Name_i18n class in order to set the domain and to register the hook
 	 * with WordPress.
 	 *
-	 * @since    1.0.0
+	 * 
 	 * @access   private
 	 */
 	private function set_locale() {
 
-		$plugin_i18n = new fus_i18n();
+		$plugin_i18n = new usf_i18n();
 
 		$this->loader->add_action( 'plugins_loaded', $plugin_i18n, 'load_plugin_textdomain' );
 
@@ -143,12 +143,12 @@ class fus {
 	 * Register all of the hooks related to the admin area functionality
 	 * of the plugin.
 	 *
-	 * @since    1.0.0
+	 * 
 	 * @access   private
 	 */
 	private function define_admin_hooks() {
 
-		$plugin_admin = new fus_Admin( $this->get_Plugin_Name(), $this->get_version() );
+		$plugin_admin = new usf_Admin( $this->get_Plugin_Name(), $this->get_version() );
 
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
 		//$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
@@ -159,12 +159,12 @@ class fus {
 	 * Register all of the hooks related to the public-facing functionality
 	 * of the plugin.
 	 *
-	 * @since    1.0.0
+	 * 
 	 * @access   private
 	 */
 	private function define_public_hooks() {
 
-		$plugin_public = new fus_Public( $this->get_Plugin_Name(), $this->get_version() );
+		$plugin_public = new usf_Public( $this->get_Plugin_Name(), $this->get_version() );
 
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
 		//$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
@@ -174,7 +174,7 @@ class fus {
 	/**
 	 * Run the loader to execute all of the hooks with WordPress.
 	 *
-	 * @since    1.0.0
+	 * 
 	 */
 	public function run() {
 		$this->loader->run();
@@ -184,7 +184,7 @@ class fus {
 	 * The name of the plugin used to uniquely identify it within the context of
 	 * WordPress and to define internationalization functionality.
 	 *
-	 * @since     1.0.0
+	 * 
 	 * @return    string    The name of the plugin.
 	 */
 	public function get_Plugin_Name() {
@@ -194,7 +194,7 @@ class fus {
 	/**
 	 * The reference to the class that orchestrates the hooks with the plugin.
 	 *
-	 * @since     1.0.0
+	 * 
 	 * @return    Plugin_Name_Loader    Orchestrates the hooks of the plugin.
 	 */
 	public function get_loader() {
@@ -204,7 +204,7 @@ class fus {
 	/**
 	 * Retrieve the version number of the plugin.
 	 *
-	 * @since     1.0.0
+	 * 
 	 * @return    string    The version number of the plugin.
 	 */
 	public function get_version() {
