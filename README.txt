@@ -13,14 +13,14 @@ Quickly and easily get and embed the number of likes, shares and comments that a
 
 URL Stats from Facebook uses the Facebook Graph API to query the stats for any URL (including facebook pages). These can then be individually displayed via shortcodes on your posts/pages or embedding in your Wordpress template files.
  
-## Features:
+**Features**:
 *             Simple interface design, showing the stats for the URL
 *             Each stat type is wrapped in `<span>` tags with appropriate class name, for easy CSS styling eg. - `<span class="usf-likes">`
 *             Shortcodes for embedding in posts and pages
 *             Compatible with all browsers
 *             No coding required
  
-### Shortcode Examples:
+**Shortcode Examples:**
 `[usf_likes]`
 `[usf_shares]`
 `[usf_comments]`
@@ -46,7 +46,7 @@ Use the shortcodes [usf_likes], [usf_shares] and [usf_comments] in your pages or
 
 == Changelog ==
 
-= 1.1 =
+= 1.0.1 =
 * Updating file naming and shortcodes.
 
 = 1.0 =
