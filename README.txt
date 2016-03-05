@@ -18,8 +18,8 @@ URL Stats from Facebook uses the Facebook Graph API to query the stats for any U
 1. Upload `url-stats-from-facebook` to the `/wp-content/plugins/` directory
 1. Activate the plugin through the 'Plugins' menu in WordPress
 1. Go to 'URL Stats FB' and set the URL of the page you want to query the number of Facebook likes, shares and comments count for
-1. Place `<?php do_action('usf_likes()'); ?>`, `<?php do_action('usf_shares()'); ?>` or `<?php do_action('usf_comments()'); ?>` in your templates
-1. Use the shortcodes ['usf_likes'], ['usf_shares'] and ['usf_comments'] in your pages or posts
+1. Place `<?php do_action(usf_likes()); ?>`, `<?php do_action(usf_shares()); ?>` or `<?php do_action(usf_comments()); ?>` in your templates
+1. Use the shortcodes [usf_likes], [usf_shares] and [usf_comments] in your pages or posts
 
 == Frequently Asked Questions ==
 
@@ -29,11 +29,7 @@ Use the shortcodes ['usf_likes'], ['usf_shares'] and ['usf_comments'] in your pa
 
 == Screenshots ==
 
-1. This screen shot description corresponds to screenshot-1.(png|jpg|jpeg|gif). Note that the screenshot is taken from
-the /assets directory or the directory that contains the stable readme.txt (tags or trunk). Screenshots in the /assets
-directory take precedence. For example, `/assets/screenshot-1.png` would win over `/tags/4.3/screenshot-1.png`
-(or jpg, jpeg, gif).
-2. This is the second screen shot
+1. Admin - URL Stats FB
 
 == Changelog ==
 
