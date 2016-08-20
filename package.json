@@ -1,0 +1,55 @@
+{
+  "name": "url-stats-from-facebook",
+  "version": "1.0.0",
+  "description": "Quickly and easily get and embed the number of likes, shares and comments that any URL has had on Facebook.",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "del": "^2.2.2",
+    "gulp": "^3.9.1",
+    "gulp-cache": "^0.4.5",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-cssnano": "^2.1.2",
+    "gulp-imagemin": "^3.0.3",
+    "gulp-notify": "^2.2.0",
+    "gulp-livereload": "^3.8.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^2.0.0",
+    "gulp-ruby-sass": "^2.1.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://skempin@github.com/SKempin/url-stats-from-facebook.git"
+  },
+  "keywords": [
+    "facebook",
+    "embed",
+    "posts",
+    "pages",
+    "social",
+    "media",
+    "counter",
+    "count",
+    "counters",
+    "statistics",
+    "likes",
+    "shares",
+    "comments",
+    "reports",
+    "like",
+    "count",
+    "share",
+    "count",
+    "comment",
+    "count"
+  ],
+  "author": "Stephen Kempin",
+  "license": "GPL-2.0",
+  "bugs": {
+    "url": "https://github.com/SKempin/url-stats-from-facebook/issues"
+  },
+  "homepage": "https://github.com/SKempin/url-stats-from-facebook"
+}

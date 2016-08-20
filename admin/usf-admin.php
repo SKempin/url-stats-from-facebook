@@ -15,7 +15,7 @@ class usf_Admin {
 	/**
 	 * The ID of this plugin.
 	 *
-	 * 
+	 *
 	 * @access   private
 	 * @var      string    $Plugin_Name    The ID of this plugin.
 	 */
@@ -24,7 +24,7 @@ class usf_Admin {
 	/**
 	 * The version of this plugin.
 	 *
-	 * 
+	 *
 	 * @access   private
 	 * @var      string    $version    The current version of this plugin.
 	 */
@@ -33,7 +33,7 @@ class usf_Admin {
 	/**
 	 * Initialize the class and set its properties.
 	 *
-	 * 
+	 *
 	 * @param      string    $Plugin_Name       The name of this plugin.
 	 * @param      string    $version    The version of this plugin.
 	 */
@@ -41,8 +41,8 @@ class usf_Admin {
 
 		$this->Plugin_Name = $Plugin_Name;
 		$this->version = $version;
-		
-		
+
+
 				// add_action( 'admin_menu', array( &$this, 'add_menu' ) );
 
 
@@ -51,7 +51,7 @@ class usf_Admin {
 	/**
 	 * Register the stylesheets for the admin area.
 	 *
-	 * 
+	 *
 	 */
 	public function enqueue_styles() {
 
@@ -67,14 +67,14 @@ class usf_Admin {
 		 * class.
 		 */
 
-		wp_enqueue_style( $this->Plugin_Name, plugin_dir_url( __FILE__ ) . 'css/usf-admin.css', array(), $this->version, 'all' );
+		wp_enqueue_style( $this->Plugin_Name, plugin_dir_url( __FILE__ ) . 'css/dist/css/usf-admin.css', array(), $this->version, 'all' );
 
 	}
 
 	/**
 	 * Register the JavaScript for the admin area.
 	 *
-	 * 
+	 *
 	 */
 	// public function enqueue_scripts() {
 
@@ -93,8 +93,8 @@ class usf_Admin {
 	// 	wp_enqueue_script( $this->Plugin_Name, plugin_dir_url( __FILE__ ) . 'js/plugin-name-admin.js', array( 'jquery' ), $this->version, false );
 
 	// }
-	
-	
-		
+
+
+
 
 }
