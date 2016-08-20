@@ -14,7 +14,7 @@
  *
  * @wordpress-plugin
  * Plugin Name:       URL Stats from Facebook
- * Plugin URI:        https://github.com/SKempin/URL-Stats-Facebook
+ * Plugin URI:        https://github.com/SKempin/url-stats-from-facebook
  * Description:       Easily embed the Facebook like, share and comment counts of any URL via Wordpress shortcodes.
  * Version:           1.0.1
  * Author:            Stephen Kempin
@@ -88,24 +88,24 @@ add_action('admin_menu', 'usf_settings');
 // Query for page statistics
 function usf_dataCheck($url) {
 
-    // get JSON file 
+    // get JSON file
     $fql_string = file_get_contents("https://graph.facebook.com/fql?q=SELECT%20url,%20normalized_url,%20share_count,%20like_count,%20comment_count,%20total_count,%20commentsbox_count,%20comments_fbid,%20click_count%20FROM%20link_stat%20WHERE%20url=%22{$url}%22");
     $GLOBALS [$decoded_json] = json_decode($fql_string);
-  
+
     // set data types to query
     $typesCount = array('like_count', 'share_count', 'comment_count');
-    
+
     // run query function in loop
     foreach ($typesCount as $value) {
     	// query data type and format integer
-    	$result = number_format((int) $GLOBALS [$decoded_json]->data[0]->$value, 0, ', ', ', '); 
+    	$result = number_format((int) $GLOBALS [$decoded_json]->data[0]->$value, 0, ', ', ', ');
      	// add values to counts array
         $counts_array[] = [$value, $result];
     }
-    
+
     // return counts array
     return $counts_array;
- 
+
 }
 
 
@@ -115,7 +115,7 @@ $page = get_option('usf_page_url');
 
 // Generate Shortcodes
 $shortcode_pageURL = $page;
-// likes shortcode 
+// likes shortcode
 function usf_likes() {
 	global $shortcode_pageURL;
 	$counts_array = usf_dataCheck($shortcode_pageURL);
@@ -124,11 +124,11 @@ function usf_likes() {
 add_shortcode('usf_likes', 'usf_likes');
 
 
-// shares shortcode 
+// shares shortcode
 function usf_shares() {
 	global $shortcode_pageURL;
 	$counts_array = usf_dataCheck($shortcode_pageURL);
-	echo '<span class="usf-shares">'.$counts_array[1][1].'</span>';	
+	echo '<span class="usf-shares">'.$counts_array[1][1].'</span>';
 }
 add_shortcode('usf_shares', 'usf_shares');
 
