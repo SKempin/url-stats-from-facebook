@@ -92,7 +92,7 @@ add_action('admin_menu', 'usf_settings');
 // FACEBOOK GRAPH API QUERY
 //======================================================================
 
-// Query for page statistics
+/* Query for page statistics */
 function usf_dataCheck($url, $token) {
     $fbg_response = wp_remote_get( 'https://graph.facebook.com/v2.7/'.$url.'/?fields=about%2Cfan_count%2Ctalking_about_count%2Ccheckins%2Cwere_here_count%2Cposts.limit(1)%2Cratings.limit(1)&access_token='.$token.'');
     if ( is_array( $fbg_response ) && ! is_wp_error( $fbg_response ) ) {
@@ -112,8 +112,50 @@ usf_dataCheck($page, $token);
 // SHORTCODES
 //======================================================================
 
-// fans / likes shortcode
+/* fans / likes */
 function usf_likes() {
 	return '<div class="usf-likes">'.number_format($GLOBALS [$fbg_array] ['fan_count']).'</div>';
 }
 add_shortcode('usf_likes', 'usf_likes');
+
+
+/* talking about */
+function usf_talking_about() {
+    return '<div class="usf-likes">'.number_format($GLOBALS [$fbg_array] ['talking_about_count']).'</div>';
+}
+add_shortcode('usf_talking_about', 'usf_talking_about');
+
+
+/* check-ins */
+function usf_checkins() {
+    return '<div class="usf-likes">'.number_format($GLOBALS [$fbg_array] ['checkins']).'</div>';
+}
+add_shortcode('usf_checkins', 'usf_checkins');
+
+
+/* were here */
+function usf_were_here() {
+    return '<div class="usf-likes">'.number_format($GLOBALS [$fbg_array] ['were_here_count']).'</div>';
+}
+add_shortcode('usf_were_here', 'usf_were_here');
+
+
+/* last status */
+function usf_last_status() {
+    return '<div class="usf-likes">'.$GLOBALS [$fbg_array]['posts']['data'][0]['message'].'</div>';
+}
+add_shortcode('usf_last_status', 'usf_last_status');
+
+
+/* last review / rating */
+function usf_last_review() {
+    return '<div class="usf-likes">'.$GLOBALS [$fbg_array]['ratings']['data'][0]['review_text'].'</div>';
+}
+add_shortcode('usf_last_review', 'usf_last_review');
+
+
+/* last reviewer / rater */
+function usf_last_reviewer() {
+    return '<div class="usf-likes">'.$GLOBALS [$fbg_array]['ratings']['data'][0]['reviewer']['name'].'</div>';
+}
+add_shortcode('usf_last_reviewer', 'usf_last_reviewer');

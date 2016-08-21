@@ -23,7 +23,8 @@ function usf_display_settings() {
 
     $html = '</pre>
 		<div class="wrap"><form action="options.php" method="post" name="options">
-		<h1>URL Stats from Facebook</h1>'.$GLOBALS [$fbg_array]['id'].'
+		<h1>page ID:</h1>'.$GLOBALS [$fbg_array]['id'].'
+		<h1>URL Stats from Facebook</h1>
 		<p><strong>Page About:</strong> '.$GLOBALS [$fbg_array] ['about'].'</p>
 		' . wp_nonce_field('update-options') . '
 		<table class="form-table" width="100%" cellpadding="10">
@@ -45,13 +46,14 @@ function usf_display_settings() {
 		 <h2>URL Stats:</h2>
 		 	<div class="stats-box">
 			<p><strong>Fans Count:</strong> '.number_format($GLOBALS [$fbg_array] ['fan_count']).'</p>
-			<p><strong>Talking About Count:</strong> '.$GLOBALS [$fbg_array] ['talking_about_count'].'</p>
-			<p><strong>Checkins  Count:</strong> '.$GLOBALS [$fbg_array] ['checkins'].'</p>
+			<p><strong>Talking About Count:</strong> '.number_format($GLOBALS [$fbg_array] ['talking_about_count']).'</p>
+			<p><strong>Check-ins Count:</strong> '.$GLOBALS [$fbg_array] ['checkins'].'</p>
 			<p><strong>Were Here  Count:</strong> '.$GLOBALS [$fbg_array] ['were_here_count'].'</p>
 			<p><strong>Last  Status:</strong> '.$GLOBALS [$fbg_array]['posts']['data'][0]['message'].'</p>
 			<p><strong>Last  Rating:</strong> '.$GLOBALS [$fbg_array]['ratings']['data'][0]['review_text'].'</p>
 			<p><strong>Last  Rating Reviewer:</strong> '.$GLOBALS [$fbg_array]['ratings']['data'][0]['reviewer']['name'].'</p>
 			</div>
+
 		<pre>';
 
   	echo $html;
