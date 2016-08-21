@@ -83,45 +83,14 @@ function usf_settings() {
 }
 add_action('admin_menu', 'usf_settings');
 
+// $token = get_option('token');
 
 
-/** @var array|WP_Error $response */
-// $response = wp_remote_get( 'https://graph.facebook.com/v2.7/muse/?fields=about%2Cfan_count%2Ctalking_about_count%2Ccheckins%2Cwere_here_count%2Cposts.limit(1)%2Cratings.limit(1)&access_token=EAACEdEose0cBAFR6HHhntqWaamOjvV9K7w2aC7FZB5PKQkVkZBP5mGK0NoVuRGZC4mVuH6n9wzZC1lGLsEihZBh1xJnQuZBZBuI4uG0bzGYdnTdAZCoZA0ZAL0kD0C3S0Gr39XF7TWVyPBaKZAK5CkD5SvEUoZB9dCVDfKRJSVNZCNANW0QZDZD' );
 
-// if ( is_array( $response ) && ! is_wp_error( $response ) ) {
-//     $headers = $response['headers']; // array of http header lines
-//     $body    = $response['body']; // use the content
-// }
-// // echo $body;
-// $arrayfb = json_decode($body, true);
-
-// print_r($arrayfb);
-// echo "fan count is".$arrayfb['fan_count'];
-// echo "TEST count is".$arrayfb['posts']['data'][0]['message'];
-
-// $test = explode(':', $body);
-// // $cars = array($body);
-// print_r($test);
-
-// $test2 = json_encode($body);
-// echo $test2;
-
-// $response = wp_remote_retrieve_body( 'https://graph.facebook.com/v2.7/theanthemics/?fields=about%2Cfan_count%2Ctalking_about_count%2Ccheckins%2Cwere_here_count%2Cposts.limit(1)%2Cratings.limit(1)&access_token=EAACEdEose0cBAOuiV56bXdRyG9sZAH94WEEDIWxvDx8SCeGZBNf4Tw7lV20Stw6uUUPAIW5h5HdYiLqVUocV81ntdQYTrJrERbMNFsXdZCZB3Difl4KbKywnkNtHqS8DNZAAaXNaZCvgOqyHlgS68HkPx4n1UIY5naJfTtIZCmy7wZDZD' );
-// print_r($response);
-
-
-// $at = get_option('at');
 
 // Query for page statistics
-function usf_dataCheck($url) {
-
-
-    // $response = wp_remote_get( 'https://graph.facebook.com/v2.7/muse/?fields=about%2Cfan_count%2Ctalking_about_count%2Ccheckins%2Cwere_here_count%2Cposts.limit(1)%2Cratings.limit(1)&access_token=EAACEdEose0cBAFR6HHhntqWaamOjvV9K7w2aC7FZB5PKQkVkZBP5mGK0NoVuRGZC4mVuH6n9wzZC1lGLsEihZBh1xJnQuZBZBuI4uG0bzGYdnTdAZCoZA0ZAL0kD0C3S0Gr39XF7TWVyPBaKZAK5CkD5SvEUoZB9dCVDfKRJSVNZCNANW0QZDZD' );
-
-    // $fbg_response = wp_remote_get( 'https://graph.facebook.com/v2.7/'.$url.'/?fields=about%2Cfan_count%2Ctalking_about_count%2Ccheckins%2Cwere_here_count%2Cposts.limit(1)%2Cratings.limit(1)&access_token=EAACEdEose0cBAFR6HHhntqWaamOjvV9K7w2aC7FZB5PKQkVkZBP5mGK0NoVuRGZC4mVuH6n9wzZC1lGLsEihZBh1xJnQuZBZBuI4uG0bzGYdnTdAZCoZA0ZAL0kD0C3S0Gr39XF7TWVyPBaKZAK5CkD5SvEUoZB9dCVDfKRJSVNZCNANW0QZDZD' );
-
-
-$token = 'EAACEdEose0cBAPnVCFL7vHbMBlZAxWjkSfofGVgB5j3XiZBvZBKeTpt8hhluegorIz3T5YDS30fuGbyt0ZB56IAGKzZCAUgDbDcQGXQv8QNN9ELYmMQOeZBtqbY5DVkgt2c4YWNfMUXaG4ZBZAXYaLlwtnhzfAgAIydWtb7J9MYXOQZDZD';
+function usf_dataCheck($url, $token) {
+    // $token = 'EAACEdEose0cBAPnVCFL7vHbMBlZAxWjkSfofGVgB5j3XiZBvZBKeTpt8hhluegorIz3T5YDS30fuGbyt0ZB56IAGKzZCAUgDbDcQGXQv8QNN9ELYmMQOeZBtqbY5DVkgt2c4YWNfMUXaG4ZBZAXYaLlwtnhzfAgAIydWtb7J9MYXOQZDZD';
     $fbg_response = wp_remote_get( 'https://graph.facebook.com/v2.7/'.$url.'/?fields=about%2Cfan_count%2Ctalking_about_count%2Ccheckins%2Cwere_here_count%2Cposts.limit(1)%2Cratings.limit(1)&access_token='.$token.'');
 
 // print_r($fbg_response);
@@ -149,8 +118,13 @@ if ( is_array( $fbg_response ) && ! is_wp_error( $fbg_response ) ) {
 
 // Get URL option from admin
 $page = get_option('usf_page_url');
+$token = get_option('token');
+// echo $token;
 
 
+
+// var_dump($page);
+// var_dump($token);
 
 // $read_facebook = get_transient( 'facebook_test' );
 
@@ -160,8 +134,9 @@ $page = get_option('usf_page_url');
 
 // Generate Shortcodes
 $shortcode_pageURL = $page;
+$shortcode_Token = $token;
 
-usf_dataCheck($shortcode_pageURL);
+usf_dataCheck($shortcode_pageURL,$shortcode_Token);
 
 
 

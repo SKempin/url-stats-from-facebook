@@ -17,10 +17,10 @@
 function usf_display_settings() {
 
     $page_url = (get_option('usf_page_url') != '') ? get_option('usf_page_url') : 'theanthemics';
-        // $access_token = (get_option('at') != '') ? get_option('at') : 'theanthemics';
+    $page_token = (get_option('token') != '') ? get_option('token') : 'EAACEdEose0cBAPnVCFL7vHbMBlZAxWjkSfofGVgB5j3XiZBvZBKeTpt8hhluegorIz3T5YDS30fuGbyt0ZB56IAGKzZCAUgDbDcQGXQv8QNN9ELYmMQOeZBtqbY5DVkgt2c4YWNfMUXaG4ZBZAXYaLlwtnhzfAgAIydWtb7J9MYXOQZDZD';
 
     // $access_token = (get_option('at') != '');
-    $page_stats = usf_dataCheck($page_url);
+    $page_stats = usf_dataCheck($page_url, $page_token);
 
    // $id = $GLOBALS [$fbg_array]['id'];
 
@@ -34,8 +34,15 @@ function usf_display_settings() {
 		<tbody>
 		<tr>
 		<td scope="row" align="left">
+
+	 <input type="text" name="token" value="' . $page_token . '" />
+
+
 		 <h2><label class="label">Facebook Page ID:</label></h2>
-		www.facebook.com/<input type="text" name="usf_page_url" value="' . $page_url . '" /></td>
+		www.facebook.com/<input type="text" name="usf_page_url" value="' . $page_url . '" />
+
+
+		</td>
 
 		<h2><label class="label">access token</label></h2>
 
