@@ -85,26 +85,64 @@ add_action('admin_menu', 'usf_settings');
 
 
 
+/** @var array|WP_Error $response */
+// $response = wp_remote_get( 'https://graph.facebook.com/v2.7/muse/?fields=about%2Cfan_count%2Ctalking_about_count%2Ccheckins%2Cwere_here_count%2Cposts.limit(1)%2Cratings.limit(1)&access_token=EAACEdEose0cBAFR6HHhntqWaamOjvV9K7w2aC7FZB5PKQkVkZBP5mGK0NoVuRGZC4mVuH6n9wzZC1lGLsEihZBh1xJnQuZBZBuI4uG0bzGYdnTdAZCoZA0ZAL0kD0C3S0Gr39XF7TWVyPBaKZAK5CkD5SvEUoZB9dCVDfKRJSVNZCNANW0QZDZD' );
+
+// if ( is_array( $response ) && ! is_wp_error( $response ) ) {
+//     $headers = $response['headers']; // array of http header lines
+//     $body    = $response['body']; // use the content
+// }
+// // echo $body;
+// $arrayfb = json_decode($body, true);
+
+// print_r($arrayfb);
+// echo "fan count is".$arrayfb['fan_count'];
+// echo "TEST count is".$arrayfb['posts']['data'][0]['message'];
+
+// $test = explode(':', $body);
+// // $cars = array($body);
+// print_r($test);
+
+// $test2 = json_encode($body);
+// echo $test2;
+
+// $response = wp_remote_retrieve_body( 'https://graph.facebook.com/v2.7/theanthemics/?fields=about%2Cfan_count%2Ctalking_about_count%2Ccheckins%2Cwere_here_count%2Cposts.limit(1)%2Cratings.limit(1)&access_token=EAACEdEose0cBAOuiV56bXdRyG9sZAH94WEEDIWxvDx8SCeGZBNf4Tw7lV20Stw6uUUPAIW5h5HdYiLqVUocV81ntdQYTrJrERbMNFsXdZCZB3Difl4KbKywnkNtHqS8DNZAAaXNaZCvgOqyHlgS68HkPx4n1UIY5naJfTtIZCmy7wZDZD' );
+// print_r($response);
+
+
+// $at = get_option('at');
+
 // Query for page statistics
 function usf_dataCheck($url) {
 
-    // get JSON file
-    $fql_string = file_get_contents("https://graph.facebook.com/fql?q=SELECT%20url,%20normalized_url,%20share_count,%20like_count,%20comment_count,%20total_count,%20commentsbox_count,%20comments_fbid,%20click_count%20FROM%20link_stat%20WHERE%20url=%22{$url}%22");
-    $GLOBALS [$decoded_json] = json_decode($fql_string);
 
-    // set data types to query
-    $typesCount = array('like_count', 'share_count', 'comment_count');
+    // $response = wp_remote_get( 'https://graph.facebook.com/v2.7/muse/?fields=about%2Cfan_count%2Ctalking_about_count%2Ccheckins%2Cwere_here_count%2Cposts.limit(1)%2Cratings.limit(1)&access_token=EAACEdEose0cBAFR6HHhntqWaamOjvV9K7w2aC7FZB5PKQkVkZBP5mGK0NoVuRGZC4mVuH6n9wzZC1lGLsEihZBh1xJnQuZBZBuI4uG0bzGYdnTdAZCoZA0ZAL0kD0C3S0Gr39XF7TWVyPBaKZAK5CkD5SvEUoZB9dCVDfKRJSVNZCNANW0QZDZD' );
 
-    // run query function in loop
-    foreach ($typesCount as $value) {
-    	// query data type and format integer
-    	$result = number_format((int) $GLOBALS [$decoded_json]->data[0]->$value, 0, ', ', ', ');
-     	// add values to counts array
-        $counts_array[] = [$value, $result];
-    }
+    // $fbg_response = wp_remote_get( 'https://graph.facebook.com/v2.7/'.$url.'/?fields=about%2Cfan_count%2Ctalking_about_count%2Ccheckins%2Cwere_here_count%2Cposts.limit(1)%2Cratings.limit(1)&access_token=EAACEdEose0cBAFR6HHhntqWaamOjvV9K7w2aC7FZB5PKQkVkZBP5mGK0NoVuRGZC4mVuH6n9wzZC1lGLsEihZBh1xJnQuZBZBuI4uG0bzGYdnTdAZCoZA0ZAL0kD0C3S0Gr39XF7TWVyPBaKZAK5CkD5SvEUoZB9dCVDfKRJSVNZCNANW0QZDZD' );
 
-    // return counts array
-    return $counts_array;
+
+$token = 'EAACEdEose0cBAPnVCFL7vHbMBlZAxWjkSfofGVgB5j3XiZBvZBKeTpt8hhluegorIz3T5YDS30fuGbyt0ZB56IAGKzZCAUgDbDcQGXQv8QNN9ELYmMQOeZBtqbY5DVkgt2c4YWNfMUXaG4ZBZAXYaLlwtnhzfAgAIydWtb7J9MYXOQZDZD';
+    $fbg_response = wp_remote_get( 'https://graph.facebook.com/v2.7/'.$url.'/?fields=about%2Cfan_count%2Ctalking_about_count%2Ccheckins%2Cwere_here_count%2Cposts.limit(1)%2Cratings.limit(1)&access_token='.$token.'');
+
+// print_r($fbg_response);
+
+
+if ( is_array( $fbg_response ) && ! is_wp_error( $fbg_response ) ) {
+    $headers = $fbg_response['headers']; // array of http header lines
+    $body = $fbg_response['body']; // use the content
+}
+
+ $GLOBALS [$fbg_array] = json_decode($body, true);
+
+
+// $fbg_array = json_decode($body, true);
+
+ // echo $fbg_array;
+
+// set_transient( 'facebook_test', $fbg_array, 0 );
+
+
+// print_r($GLOBALS [$fbg_array]);
 
 }
 
@@ -113,18 +151,30 @@ function usf_dataCheck($url) {
 $page = get_option('usf_page_url');
 
 
+
+// $read_facebook = get_transient( 'facebook_test' );
+
+// print_r($read_facebook);
+
+// echo "TEST".$GLOBALS [$fbg_array];
+
 // Generate Shortcodes
 $shortcode_pageURL = $page;
-// likes shortcode
+
+usf_dataCheck($shortcode_pageURL);
+
+
+
+
+// // likes shortcode
 function usf_likes() {
 	global $shortcode_pageURL;
-	$counts_array = usf_dataCheck($shortcode_pageURL);
-	echo '<span class="usf-likes">'.$counts_array[0][1].'</span>';
+	echo '<span class="usf-likes">'.$GLOBALS [$fbg_array]['fan_count'].'</span>';
 }
 add_shortcode('usf_likes', 'usf_likes');
 
 
-// shares shortcode
+// // shares shortcode
 function usf_shares() {
 	global $shortcode_pageURL;
 	$counts_array = usf_dataCheck($shortcode_pageURL);
@@ -133,10 +183,10 @@ function usf_shares() {
 add_shortcode('usf_shares', 'usf_shares');
 
 
-// comments shortcode
-function usf_comments() {
-	global $shortcode_pageURL;
-	$counts_array = usf_dataCheck($shortcode_pageURL);
-	echo '<span class="usf-comments">'.$counts_array[2][1].'</span>';
-}
-add_shortcode('usf_comments', 'usf_comments');
+// // comments shortcode
+// function usf_comments() {
+// 	global $shortcode_pageURL;
+// 	$counts_array = usf_dataCheck($shortcode_pageURL);
+// 	echo '<span class="usf-comments">'.$counts_array[2][1].'</span>';
+// }
+// add_shortcode('usf_comments', 'usf_comments');
