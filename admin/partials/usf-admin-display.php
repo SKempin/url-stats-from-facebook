@@ -31,7 +31,7 @@ function usf_display_settings() {
 		<tbody>
 		<tr>
 		<td scope="row" align="left">
-	 	<input type="text" name="usf_token" value="' . $page_token . '" />
+	 	<input type="password" name="usf_token" value="' . $page_token . '" />
 		 <h2><label class="label">Facebook Page ID:</label></h2>
 		www.facebook.com/<input type="text" name="usf_page_url" value="' . $page_url . '" />
 		</td>
