@@ -75,7 +75,6 @@ function run_usf() {
 run_usf();
 
 
-
 // Add plugin options page
 include_once plugin_dir_path( __FILE__ ) . 'admin/partials/usf-admin-display.php';
 function usf_settings() {
@@ -83,35 +82,18 @@ function usf_settings() {
 }
 add_action('admin_menu', 'usf_settings');
 
-// $token = get_option('token');
-
-
-
 
 // Query for page statistics
 function usf_dataCheck($url, $token) {
     // $token = 'EAACEdEose0cBAPnVCFL7vHbMBlZAxWjkSfofGVgB5j3XiZBvZBKeTpt8hhluegorIz3T5YDS30fuGbyt0ZB56IAGKzZCAUgDbDcQGXQv8QNN9ELYmMQOeZBtqbY5DVkgt2c4YWNfMUXaG4ZBZAXYaLlwtnhzfAgAIydWtb7J9MYXOQZDZD';
     $fbg_response = wp_remote_get( 'https://graph.facebook.com/v2.7/'.$url.'/?fields=about%2Cfan_count%2Ctalking_about_count%2Ccheckins%2Cwere_here_count%2Cposts.limit(1)%2Cratings.limit(1)&access_token='.$token.'');
 
-// print_r($fbg_response);
+    if ( is_array( $fbg_response ) && ! is_wp_error( $fbg_response ) ) {
+        $headers = $fbg_response['headers']; // array of http header lines
+        $body = $fbg_response['body']; // use the content
+    }
 
-
-if ( is_array( $fbg_response ) && ! is_wp_error( $fbg_response ) ) {
-    $headers = $fbg_response['headers']; // array of http header lines
-    $body = $fbg_response['body']; // use the content
-}
-
- $GLOBALS [$fbg_array] = json_decode($body, true);
-
-
-// $fbg_array = json_decode($body, true);
-
- // echo $fbg_array;
-
-// set_transient( 'facebook_test', $fbg_array, 0 );
-
-
-// print_r($GLOBALS [$fbg_array]);
+     $GLOBALS [$fbg_array] = json_decode($body, true);
 
 }
 
@@ -119,43 +101,30 @@ if ( is_array( $fbg_response ) && ! is_wp_error( $fbg_response ) ) {
 // Get URL option from admin
 $page = get_option('usf_page_url');
 $token = get_option('token');
-// echo $token;
-
-
-
-// var_dump($page);
-// var_dump($token);
-
-// $read_facebook = get_transient( 'facebook_test' );
-
-// print_r($read_facebook);
-
-// echo "TEST".$GLOBALS [$fbg_array];
 
 // Generate Shortcodes
 $shortcode_pageURL = $page;
 $shortcode_Token = $token;
 
-usf_dataCheck($shortcode_pageURL,$shortcode_Token);
-
-
+usf_dataCheck($shortcode_pageURL, $shortcode_Token);
 
 
 // // likes shortcode
 function usf_likes() {
 	global $shortcode_pageURL;
+            global $shortcode_Token;
 	echo '<span class="usf-likes">'.$GLOBALS [$fbg_array]['fan_count'].'</span>';
 }
 add_shortcode('usf_likes', 'usf_likes');
 
 
 // // shares shortcode
-function usf_shares() {
-	global $shortcode_pageURL;
-	$counts_array = usf_dataCheck($shortcode_pageURL);
-	echo '<span class="usf-shares">'.$counts_array[1][1].'</span>';
-}
-add_shortcode('usf_shares', 'usf_shares');
+// function usf_shares() {
+// 	global $shortcode_pageURL;
+// 	$counts_array = usf_dataCheck($shortcode_pageURL);
+// 	echo '<span class="usf-shares">'.$counts_array[1][1].'</span>';
+// }
+// add_shortcode('usf_shares', 'usf_shares');
 
 
 // // comments shortcode

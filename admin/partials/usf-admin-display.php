@@ -16,13 +16,9 @@
 // Admin options page
 function usf_display_settings() {
 
-    $page_url = (get_option('usf_page_url') != '') ? get_option('usf_page_url') : 'theanthemics';
     $page_token = (get_option('token') != '') ? get_option('token') : 'EAACEdEose0cBAPnVCFL7vHbMBlZAxWjkSfofGVgB5j3XiZBvZBKeTpt8hhluegorIz3T5YDS30fuGbyt0ZB56IAGKzZCAUgDbDcQGXQv8QNN9ELYmMQOeZBtqbY5DVkgt2c4YWNfMUXaG4ZBZAXYaLlwtnhzfAgAIydWtb7J9MYXOQZDZD';
-
-    // $access_token = (get_option('at') != '');
+    $page_url = (get_option('usf_page_url') != '') ? get_option('usf_page_url') : 'theanthemics';
     $page_stats = usf_dataCheck($page_url, $page_token);
-
-   // $id = $GLOBALS [$fbg_array]['id'];
 
     $html = '</pre>
 		<div class="wrap"><form action="options.php" method="post" name="options">
@@ -37,42 +33,30 @@ function usf_display_settings() {
 
 	 <input type="text" name="token" value="' . $page_token . '" />
 
-
 		 <h2><label class="label">Facebook Page ID:</label></h2>
 		www.facebook.com/<input type="text" name="usf_page_url" value="' . $page_url . '" />
 
-
 		</td>
-
 		<h2><label class="label">access token</label></h2>
-
 		</tr>
-
 		</tbody>
 		</table>
 		 <input type="hidden" name="action" value="update" />
-
 		 <input type="hidden" name="page_options" value="at" />
-
-
 		 <input type="hidden" name="page_options" value="usf_page_url" />
 
 		 <input type="submit" name="Submit" value="Update" /></form></div>
 		 <hr>
 		 <h2>URL Stats:</h2>
 		 	<div class="stats-box">
-
 			<p><strong>Fans Count:</strong> '.number_format($GLOBALS [$fbg_array] ['fan_count']).'</p>
 			<p><strong>Talking About Count:</strong> '.$GLOBALS [$fbg_array] ['talking_about_count'].'</p>
 			<p><strong>Checkins  Count:</strong> '.$GLOBALS [$fbg_array] ['checkins'].'</p>
 			<p><strong>Were Here  Count:</strong> '.$GLOBALS [$fbg_array] ['were_here_count'].'</p>
-
-							<p><strong>Last  Status:</strong> '.$GLOBALS [$fbg_array]['posts']['data'][0]['message'].'</p>
-							<p><strong>Last  Rating:</strong> '.$GLOBALS [$fbg_array]['ratings']['data'][0]['review_text'].'</p>
-														<p><strong>Last  Rating Reviewer:</strong> '.$GLOBALS [$fbg_array]['ratings']['data'][0]['reviewer']['name'].'</p>
-
-
-		</div>
+			<p><strong>Last  Status:</strong> '.$GLOBALS [$fbg_array]['posts']['data'][0]['message'].'</p>
+			<p><strong>Last  Rating:</strong> '.$GLOBALS [$fbg_array]['ratings']['data'][0]['review_text'].'</p>
+			<p><strong>Last  Rating Reviewer:</strong> '.$GLOBALS [$fbg_array]['ratings']['data'][0]['reviewer']['name'].'</p>
+			</div>
 		<pre>';
 
   	echo $html;
