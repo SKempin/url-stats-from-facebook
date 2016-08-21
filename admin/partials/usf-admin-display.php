@@ -23,19 +23,15 @@ function usf_display_settings() {
     $html = '</pre>
 		<div class="wrap"><form action="options.php" method="post" name="options">
 		<h1>URL Stats from Facebook</h1>'.$GLOBALS [$fbg_array]['id'].'
-				 				<p><strong>Page About:</strong> '.$GLOBALS [$fbg_array] ['about'].'</p>
-
+		<p><strong>Page About:</strong> '.$GLOBALS [$fbg_array] ['about'].'</p>
 		' . wp_nonce_field('update-options') . '
 		<table class="form-table" width="100%" cellpadding="10">
 		<tbody>
 		<tr>
 		<td scope="row" align="left">
-
-	 <input type="text" name="token" value="' . $page_token . '" />
-
+	 	<input type="text" name="token" value="' . $page_token . '" />
 		 <h2><label class="label">Facebook Page ID:</label></h2>
 		www.facebook.com/<input type="text" name="usf_page_url" value="' . $page_url . '" />
-
 		</td>
 		<h2><label class="label">access token</label></h2>
 		</tr>
@@ -44,7 +40,6 @@ function usf_display_settings() {
 		 <input type="hidden" name="action" value="update" />
 		 <input type="hidden" name="page_options" value="at" />
 		 <input type="hidden" name="page_options" value="usf_page_url" />
-
 		 <input type="submit" name="Submit" value="Update" /></form></div>
 		 <hr>
 		 <h2>URL Stats:</h2>

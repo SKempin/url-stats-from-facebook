@@ -85,18 +85,13 @@ add_action('admin_menu', 'usf_settings');
 
 // Query for page statistics
 function usf_dataCheck($url, $token) {
-    // $token = 'EAACEdEose0cBAPnVCFL7vHbMBlZAxWjkSfofGVgB5j3XiZBvZBKeTpt8hhluegorIz3T5YDS30fuGbyt0ZB56IAGKzZCAUgDbDcQGXQv8QNN9ELYmMQOeZBtqbY5DVkgt2c4YWNfMUXaG4ZBZAXYaLlwtnhzfAgAIydWtb7J9MYXOQZDZD';
     $fbg_response = wp_remote_get( 'https://graph.facebook.com/v2.7/'.$url.'/?fields=about%2Cfan_count%2Ctalking_about_count%2Ccheckins%2Cwere_here_count%2Cposts.limit(1)%2Cratings.limit(1)&access_token='.$token.'');
-
     if ( is_array( $fbg_response ) && ! is_wp_error( $fbg_response ) ) {
         $headers = $fbg_response['headers']; // array of http header lines
         $body = $fbg_response['body']; // use the content
     }
-
      $GLOBALS [$fbg_array] = json_decode($body, true);
-
 }
-
 
 // Get URL option from admin
 $page = get_option('usf_page_url');
@@ -108,12 +103,13 @@ $shortcode_Token = $token;
 
 usf_dataCheck($shortcode_pageURL, $shortcode_Token);
 
-
-// // likes shortcode
+// likes shortcode
 function usf_likes() {
 	global $shortcode_pageURL;
             global $shortcode_Token;
-	echo '<span class="usf-likes">'.$GLOBALS [$fbg_array]['fan_count'].'</span>';
+            $test3 = usf_dataCheck($shortcode_pageURL, $shortcode_Token);
+            var_dump($test3);
+	echo '<span class="usf-likes">TEST:'.$test3.'</span>';
 }
 add_shortcode('usf_likes', 'usf_likes');
 
