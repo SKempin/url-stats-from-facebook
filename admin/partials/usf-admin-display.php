@@ -13,12 +13,13 @@
  */
 
 
-// Admin options page
+//======================================================================
+// ADMIN OPTIONS PAGE
+//======================================================================
 function usf_display_settings() {
 
-    $page_token = (get_option('token') != '') ? get_option('token') : 'EAACEdEose0cBAPnVCFL7vHbMBlZAxWjkSfofGVgB5j3XiZBvZBKeTpt8hhluegorIz3T5YDS30fuGbyt0ZB56IAGKzZCAUgDbDcQGXQv8QNN9ELYmMQOeZBtqbY5DVkgt2c4YWNfMUXaG4ZBZAXYaLlwtnhzfAgAIydWtb7J9MYXOQZDZD';
+    $page_token = (get_option('usf_token') != '') ? get_option('usf_token') : 'tttt';
     $page_url = (get_option('usf_page_url') != '') ? get_option('usf_page_url') : 'theanthemics';
-    $page_stats = usf_dataCheck($page_url, $page_token);
 
     $html = '</pre>
 		<div class="wrap"><form action="options.php" method="post" name="options">
@@ -29,16 +30,15 @@ function usf_display_settings() {
 		<tbody>
 		<tr>
 		<td scope="row" align="left">
-	 	<input type="text" name="token" value="' . $page_token . '" />
+	 	<input type="text" name="usf_token" value="' . $page_token . '" />
 		 <h2><label class="label">Facebook Page ID:</label></h2>
 		www.facebook.com/<input type="text" name="usf_page_url" value="' . $page_url . '" />
 		</td>
-		<h2><label class="label">access token</label></h2>
 		</tr>
 		</tbody>
 		</table>
 		 <input type="hidden" name="action" value="update" />
-		 <input type="hidden" name="page_options" value="at" />
+		 <input type="hidden" name="page_options" value="usf_token" />
 		 <input type="hidden" name="page_options" value="usf_page_url" />
 		 <input type="submit" name="Submit" value="Update" /></form></div>
 		 <hr>
@@ -56,5 +56,6 @@ function usf_display_settings() {
 
   	echo $html;
 }
+
 
 ?>

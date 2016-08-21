@@ -75,13 +75,22 @@ function run_usf() {
 run_usf();
 
 
-// Add plugin options page
+
+//======================================================================
+// PLUGIN OPTIONS PAGE
+//======================================================================
+
 include_once plugin_dir_path( __FILE__ ) . 'admin/partials/usf-admin-display.php';
 function usf_settings() {
     add_menu_page('URL Stats FB', 'URL Stats FB', 'administrator', 'usf_settings', 'usf_display_settings',  'dashicons-facebook');
 }
 add_action('admin_menu', 'usf_settings');
 
+
+
+//======================================================================
+// FACEBOOK GRAPH API QUERY
+//======================================================================
 
 // Query for page statistics
 function usf_dataCheck($url, $token) {
@@ -93,40 +102,18 @@ function usf_dataCheck($url, $token) {
      $GLOBALS [$fbg_array] = json_decode($body, true);
 }
 
-// Get URL option from admin
 $page = get_option('usf_page_url');
-$token = get_option('token');
+$token = get_option('usf_token');
+usf_dataCheck($page, $token);
 
-// Generate Shortcodes
-$shortcode_pageURL = $page;
-$shortcode_Token = $token;
 
-usf_dataCheck($shortcode_pageURL, $shortcode_Token);
 
-// likes shortcode
+//======================================================================
+// SHORTCODES
+//======================================================================
+
+// fans / likes shortcode
 function usf_likes() {
-	global $shortcode_pageURL;
-            global $shortcode_Token;
-            $test3 = usf_dataCheck($shortcode_pageURL, $shortcode_Token);
-            var_dump($test3);
-	echo '<span class="usf-likes">TEST:'.$test3.'</span>';
+	return '<div class="usf-likes">'.number_format($GLOBALS [$fbg_array] ['fan_count']).'</div>';
 }
 add_shortcode('usf_likes', 'usf_likes');
-
-
-// // shares shortcode
-// function usf_shares() {
-// 	global $shortcode_pageURL;
-// 	$counts_array = usf_dataCheck($shortcode_pageURL);
-// 	echo '<span class="usf-shares">'.$counts_array[1][1].'</span>';
-// }
-// add_shortcode('usf_shares', 'usf_shares');
-
-
-// // comments shortcode
-// function usf_comments() {
-// 	global $shortcode_pageURL;
-// 	$counts_array = usf_dataCheck($shortcode_pageURL);
-// 	echo '<span class="usf-comments">'.$counts_array[2][1].'</span>';
-// }
-// add_shortcode('usf_comments', 'usf_comments');
