@@ -18,7 +18,7 @@
 //======================================================================
 function usf_display_settings() {
 
-    $page_token = (get_option('usf_token') != '') ? get_option('usf_token') : 'tttt';
+    $page_token = (get_option('usf_token') != '') ? get_option('usf_token') : 'testtext';
     $page_url = (get_option('usf_page_url') != '') ? get_option('usf_page_url') : 'theanthemics';
 
     $html = '</pre>
