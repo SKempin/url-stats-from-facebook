@@ -1,5 +1,3 @@
-##Graph API cURL request experiment
-
 === URL Stats from Facebook ===
 Contributors: skempin
 Tags: facebook, embed, posts, pages, social media
