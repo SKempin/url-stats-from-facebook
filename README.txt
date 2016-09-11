@@ -1,3 +1,5 @@
+PLUGIN DEPRECIATED due to Facebook dropping support for FQL requests.
+
 === URL Stats from Facebook ===
 Contributors: skempin
 Tags: facebook, embed, posts, pages, social media, counter, count, counters, statistics, likes, shares, comments, reports, like count, share count, comment count
@@ -7,20 +9,20 @@ Stable tag: 4.4.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Quickly and easily get and embed the number of likes, shares and comments that any URL has had on Facebook. 
+Quickly and easily get and embed the number of likes, shares and comments that any URL has had on Facebook.
 
 == Description ==
 
-URL Stats from Facebook uses the Facebook Graph API to query the stats for any URL (including facebook pages). These can then be individually displayed via shortcodes on your posts/pages or embedding in your Wordpress template files.
- 
+URL Stats from Facebook uses the FQL to query the stats for any URL (including facebook pages). These can then be individually displayed via shortcodes on your posts/pages or embedding in your Wordpress template files.
+
 **Features:**
 
-* Simple interface design, showing the stats for the URL 
-* Each stat type is wrapped in `<span>` tags with appropriate class name, for easy CSS styling eg. `<span class="usf-likes">` 
+* Simple interface design, showing the stats for the URL
+* Each stat type is wrapped in `<span>` tags with appropriate class name, for easy CSS styling eg. `<span class="usf-likes">`
 * Shortcodes for embedding in posts and pages
 * Compatible with all browsers
 * No coding required
- 
+
 **Shortcode Examples:**
 `[usf_likes]`
 `[usf_shares]`
