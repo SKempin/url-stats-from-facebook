@@ -1,3 +1,5 @@
+# Graph API cURL request experiment
+
 === URL Stats from Facebook ===
 Contributors: skempin
 Tags: facebook, embed, posts, pages, social media
@@ -7,7 +9,7 @@ Stable tag: 4.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Quickly and easily get and embed the number of likes, shares and comments that any URL has had on Facebook. 
+Quickly and easily get and embed the number of likes, shares and comments that any URL has had on Facebook.
 
 == Description ==
 
