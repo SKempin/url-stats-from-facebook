@@ -18,7 +18,7 @@ URL Stats from Facebook uses the FQL to query the stats for any URL (including f
 See [README.txt](README.txt) for installation instructions and further details.
 
 ## Author
-Stephen Kempin
+[Stephen Kempin](http://www.stephenkempin.co.uk)
 
 ## Licence
 MIT
