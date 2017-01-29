@@ -23,4 +23,4 @@ See [README.txt](README.txt) for installation instructions and further details.
 [Stephen Kempin](http://www.stephenkempin.co.uk)
 
 ## Licence
-MIT
+[MIT](https://github.com/SKempin/url-stats-from-facebook/blob/master/LICENSE)
