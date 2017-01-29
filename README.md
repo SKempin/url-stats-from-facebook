@@ -1,9 +1,9 @@
 # URL Stats from Facebook (WP Plugin)
-
+![](https://github.com/SKempin/url-stats-from-facebook/blob/master/icon.jpg)
 > DEPRECIATED - due to Facebook dropping support for Facebook Query Language (FQL) requests.
 
-Quickly and easily get and embed the number of likes, shares and comments that any URL has had on Facebook.
-![](https://github.com/SKempin/url-stats-from-facebook/blob/master/icon.jpg)
+*Quickly and easily get and embed the number of likes, shares and comments that any URL has had on Facebook.*
+
 
 
 # Overview
