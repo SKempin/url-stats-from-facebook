@@ -1,5 +1,6 @@
 # URL Stats from Facebook (WP Plugin)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://github.com/SKempin/url-stats-from-facebook/blob/master/LICENSE)
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-no-red.svg)](https://bitbucket.org/lbesson/ansi-colors)
 
 ![](https://github.com/SKempin/url-stats-from-facebook/blob/master/icon.jpg)
 > DEPRECIATED - due to Facebook dropping support for Facebook Query Language (FQL) requests.
